@@ -1,0 +1,10 @@
+uses
+	Core,
+	Geometry,
+	Draw/Cuboid;
+
+file
+	main.cpp;
+
+mainconfig
+	"" = "";

@@ -1,0 +1,13 @@
+description "Ctrl bridge for embedded Gubo (OpenGL)";
+
+uses
+	CtrlCore,
+	GuboCore,
+	GuboLib;
+
+file
+	AGENTS.md,
+	GuboCtrl.h,
+	GuboGLCtrl.cpp,
+	_ readonly separator;
+

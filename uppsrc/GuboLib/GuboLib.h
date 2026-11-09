@@ -1,0 +1,49 @@
+#ifndef _GuboLib_GuboLib_h_
+#define _GuboLib_GuboLib_h_
+
+#include <GuboCore/GuboCore.h>
+#include <Geometry/Geometry.h>
+#ifdef flagEON
+#include <Eon/Core/Core.h>
+#include <Eon/Draw/Draw.h>
+#endif
+
+NAMESPACE_UPP
+class Engine;
+END_UPP_NAMESPACE
+
+#define NAMESPACE_GUBO_BEGIN namespace Upp { namespace Gu {
+#define NAMESPACE_GUBO_END }}
+
+NAMESPACE_UPP
+
+struct VirtualGui3D {
+	//RTTI_DECL0(VirtualGui3D)
+	
+	virtual bool        Poll(UPP::CtrlEvent& e) = 0;
+	virtual Size        GetSize() = 0;
+	virtual void        SetTitle(String title) = 0;
+	virtual SystemDraw& BeginDraw() = 0;
+	virtual void        CommitDraw() = 0;
+	virtual uint32      GetTickCount() = 0;
+	virtual void        WaitEvent(int ms) = 0;
+	virtual void        WakeUpGuiThread() = 0;
+	virtual bool        IsWaitingEvent() = 0;
+	
+};
+
+END_UPP_NAMESPACE
+
+#include "CoordinateSystem.h"
+
+#include "StaticGubo.h"
+#include "Push.h"
+
+#include "HandleTypes.h"
+#include "HandleT.h"
+#include "ScopeT.h"
+#include "HandleSystemT.h"
+
+#include "Atom.h"
+
+#endif
